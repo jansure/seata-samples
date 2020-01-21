@@ -4,9 +4,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/db_storage?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://159.138.63.238:52148/storage?useSSL=false&serverTimezone=UTC
     username: root
-    password: 123456
+    password: Abc=1234
 seata:
   enabled: true
   application-id: storage-service
@@ -31,7 +31,7 @@ seata:
       exceptionRate: 100
   service:
     vgroup-mapping: default
-    grouplist: 127.0.0.1:8091
+    grouplist: 192.168.50.54:8091
     enable-degrade: false
     disable-global-transaction: false
   transport:
@@ -63,14 +63,14 @@ seata:
     etcd3:
       server-addr: http://localhost:2379
     nacos:
-      namespace:
-      serverAddr: localhost
+      namespace: ""
+      serverAddr: 192.168.50.54:8848
     zk:
       server-addr: 127.0.0.1:2181
       session-timeout: 6000
       connect-timeout: 2000
   registry:
-    type: file
+    type: nacos
     file:
       name: file.conf
     consul:
@@ -85,8 +85,8 @@ seata:
       service-url: http://localhost:8761/eureka
     nacos:
       cluster: default
-      server-addr: localhost
-      namespace:
+      server-addr: 192.168.50.54:8848
+      namespace: ""
     redis:
       server-addr: localhost:6379
       db: 0

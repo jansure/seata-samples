@@ -63,7 +63,7 @@ seata:
       session-timeout: 6000
       connect-timeout: 2000
   registry:
-    type: file
+    type: nacos
     file:
       name: file.conf
     consul:
@@ -78,8 +78,8 @@ seata:
       service-url: http://localhost:8761/eureka
     nacos:
       cluster: default
-      server-addr: localhost
-      namespace:
+      server-addr: 192.168.50.54:8848
+      namespace: ""
     redis:
       server-addr: localhost:6379
       db: 0

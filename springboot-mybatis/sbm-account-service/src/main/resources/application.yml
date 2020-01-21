@@ -31,7 +31,7 @@ seata:
       exceptionRate: 100
   service:
     vgroup-mapping: default
-    grouplist: 127.0.0.1:8091
+    grouplist: 192.168.50.54:8091
     enable-degrade: false
     disable-global-transaction: false
   transport:
@@ -52,7 +52,7 @@ seata:
     compressor: none
     enable-client-batch-send-request: true
   config:
-    type: nacos
+    type: file
     file:
       name: file.conf
     consul:
@@ -63,8 +63,8 @@ seata:
     etcd3:
       server-addr: http://localhost:2379
     nacos:
-      namespace: ""
-      serverAddr: localhost:8848
+      namespace: "public"
+      serverAddr: 192.168.50.54:8848
     zk:
       server-addr: 127.0.0.1:2181
       session-timeout: 6000
@@ -85,7 +85,7 @@ seata:
       service-url: http://localhost:8761/eureka
     nacos:
       cluster: default
-      server-addr: localhost:8848
+      server-addr: 192.168.50.54:8848
       namespace: ""
     redis:
       server-addr: localhost:6379
